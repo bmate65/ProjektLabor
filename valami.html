@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weboldal</title>
+    
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDw_i3_t0dhJ2RBL3SAd6RpSUWYHa1cSyE&libraries=drawing&callback=initMap">
+</script>
+    <script  src="distances.js"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body onload="initMap()">
+    <header>
+        <h1>Geo térkép</h1>
+    </header>
+    <nav>
+       <!-- <a href="#home">Főoldal</a> -->
+        <a href="#geography">Földrajz</a>
+        <a href="#stars">Csillag</a>
+    </nav>
+   <!--
+    <div class="content" id="home">
+        <p><h2>Üdvözöllek a weboldalon</h2></p>
+       
+        <gmp-map center="47.85395050048828,17.284271240234375" zoom="14" map-id="DEMO_MAP_ID">
+            <gmp-advanced-marker position="47.85395050048828,17.284271240234375" title="My location">
+            </gmp-advanced-marker>
+          </gmp-map>
+    </div>
+    -->
+
+
+
+    <div class="content" id="geography">
+        <h3>Földrajz Pontok közti távolság</h3>
+        <!-- Ide helyezd el a földrajz tartalmat -->
+        <!--
+            <div id="inputPlace">
+            <input type="text" placeholder="1. pont" id="pInput_1">
+            <input type="text" placeholder="2. pont" id="pInput_2">
+            <button id="setPlace" onclick="setPlace()">Beállít</button>
+        </div>
+    -->
+  
+        
+            <!--The div elements for the map and message -->
+            <div id="map"></div>
+            <div id="msg"></div>
+
+            <button onclick="calc()">Számítás</button>
+            <button onclick="divideLineIntoKm()">test</button>
+           
+        
+            <!--Load the API from the specified URL-->
+            <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDw_i3_t0dhJ2RBL3SAd6RpSUWYHa1cSyE&callback=initMap">
+            </script>
+          
+    
+
+    
+    
+  
+  
+    
+
+
+
+    <div class="content" id="stars">
+        <h3>Csillag és égbolt</h3>
+        <!-- Ide helyezd el a csillagokról szóló tartalmat -->
+        <pre id="response"></pre>
+        <form>
+            <label for="astronomy">Válassz égitestet:</label>
+            <select id="astronomy" name="astronomy">
+              <option value="Sun">Nap</option>
+              <option value="Moon">Hold</option>
+              <option value="Mercury">Merkúr</option>
+              <option value="Venus">Vénusz</option>
+              <option value="Earth">Föld</option>
+              <option value="Mars">Mars</option>
+              <option value="Jupiter">Jupiter</option>
+              <option value="Saturn">Szaturnusz</option>
+              <option value="Uranus">Uránusz</option>
+              <option value="Neptune">Neptunusz</option>
+              <option value="Pluto">Plútó</option>
+            </select><br>
+            <label for="quantity">Földrajzi szélesség (-90° és 90° között):</label>
+            <input type="number" id="latitude" name="latitude" min="-90" max="90" value="0"><br>
+            <label for="quantity">Földrajzi hosszúság (-180° és 180 között):</label>
+            <input type="number" id="longitude" name="longitude" min="-180" max="180" value="0"><br>
+            <label for="quantity">Tengerszint feletti magasság:</label>
+            <input type="number" id="elevation" name="elevation" value="0"><br>
+        </form>
+        <button id="FetchData">Lekérés</button><br>
+        <canvas id="Astronomy1" width="400" height="400" style="border:1px solid grey"></canvas><br>
+        <canvas id="Astronomy2" width="400" height="400" style="border:1px solid grey"></canvas><br>
+        <script src="astronomy.js"></script>
+        <p id="lathatoe"></p>
+    </div>
+
+</body>
+</html>
+ 
